@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: GPL-2.0
+menuconfig ARCH_RP
+	bool "Raspberry Pi microcontroller support"
+	depends on ARCH_SINGLE_ARMV7M
+	help
+	  This enables support for Raspberry Pi rp series microcontrollers
+
+if ARCH_RP
+
+if ARCH_SINGLE_ARMV7M
+
+comment "rp2040, 2x cortex M0+"
+config ARCH_RP2040
+	bool "Raspberry Pi rp2040 microcontroller support"
+	depends on XIP_KERNEL && !MMU
+	help
+	  Enable support for the rp2040 micrcontroller.
+
+endif
+
+endif

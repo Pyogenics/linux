@@ -508,6 +508,8 @@ source "arch/arm/mach-rda/Kconfig"
 
 source "arch/arm/mach-realtek/Kconfig"
 
+source "arch/arm/mach-rp/Kconfig"
+
 source "arch/arm/mach-rpc/Kconfig"
 
 source "arch/arm/mach-rockchip/Kconfig"
