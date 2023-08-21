@@ -3,4 +3,4 @@
 # Copyright (C) 2023 Pyogenics <https://www.github.com/Pyogenics>
 #
 
-dtb-$(ARCH_RP2040) += rp2040.dtb
+dtb-$(ARCH_RP2040) += rpi-pico.dtb

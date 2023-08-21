@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: GPL-2.0
+// Copyright (C) 2023 Pyogenics <https://www.github.com/Pyogenics>
+
+#include "rp2040.dtsi"
+
+/ {
+	model = "Raspberry Pi Pico";
+
+	soc {
+	};
+}
