@@ -1,0 +1,55 @@
+// SPDX-License-Identifier: GPL-2.0
+// Copyright (C) 2023 Pyogenics <https://www.github.com/Pyogenics>
+
+#include "../armv7-m.dtsi"
+
+/ {
+	model = "Raspberry Pi rp2040 microcontroller";
+	compatible = "rp,rp2040";
+
+	memory@20000000 {
+		device_type = "memory";
+		reg = <0x20000000 0x00042000>;
+	};
+
+	reserved-memory {
+		ranges;
+
+		// 16kB bootrom
+		bootrom@0 {
+			reg = <0x0 0x00003FFF>;
+			nomap;
+		};
+
+		// 16kB flash XIP cache
+		xip-cache@15000000 {
+			reg = <0x15000000 0x00003FFF>;
+			reusable;
+		};
+
+		// 4kB USB data DPRAM
+		usb-dpram@50100000 {
+			reg = <0x50100000 0x00000FFF>;
+			reusable;
+		};
+	};
+
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		cpu@0 {
+			device_type = "cpu";
+			reg = <0>;
+			status = "okay";
+		};
+
+		cpu@1 {
+			device_type = "cpu";
+			reg = <1>;
+
+			status = "disabled";
+			enable-method = "rp,rp2040";
+		};
+	};
+};

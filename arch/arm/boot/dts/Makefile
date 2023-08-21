@@ -25,6 +25,7 @@ subdir-y += nuvoton
 subdir-y += nvidia
 subdir-y += nxp
 subdir-y += qcom
+subdir-y += raspberry
 subdir-y += realtek
 subdir-y += renesas
 subdir-y += rockchip
